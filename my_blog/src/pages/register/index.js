@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../images/brand.jpg';
 import './index.less';
 class Register extends Component {
@@ -10,24 +11,26 @@ class Register extends Component {
     return (
       <div className="register_container">
       <form>
-        <div className="logo">
-          <img src={ logo }/>
-        </div>
+
+        <Link className="logo" to='/'>
+          <img alt="vincent" src={ logo }/>
+        </Link>
+
         <div className="email">
-          <input type="email"  id="exampleInputEmail1" placeholder="Email"/>
+          <input type="email" placeholder="邮箱"/>
         </div>
         <div className="password">
-          <input type="password" id="exampleInputPassword1" placeholder="Password"/>
+          <input type="password" placeholder="设置密码"/>
         </div>
-        <div className="forget_password">
-          <span>忘记密码？</span>
+        <div className="password">
+          <input type="password" placeholder="确认密码"/>
         </div>
         <div className="login_btn">
-          <button>登陆</button>
+          <button>注册</button>
         </div>
-        <div className="register_acount">
-          <span>没有账号？注册</span>
-        </div>
+        <Link className="register_acount" to="/login">
+          <span>已有账号？登陆</span>
+        </Link>
       </form>
       </div>
     );
